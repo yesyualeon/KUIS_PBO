@@ -1,0 +1,20 @@
+package MVC;
+
+import Controller.PinjamController;
+import Model.PinjamModel;
+import View.PinjamView;
+
+public class PinjamMVC {
+    String id_asisten;
+    String id_jadwal;
+    String data[][];
+
+    public PinjamMVC(String id_asisten, String id_jadwal, String[][] data) {
+        this.id_asisten = id_asisten;
+        this.id_jadwal = id_jadwal;
+        this.data = data;
+        PinjamModel model = new PinjamModel();
+        PinjamView view = new PinjamView();
+        PinjamController controller = new PinjamController(model,view,id_jadwal,id_asisten,data);
+    }
+}
